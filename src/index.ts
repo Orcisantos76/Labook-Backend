@@ -2,12 +2,28 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
-app.listen(3003,()=>{
+app.listen(3003, () => {
     console.log("Arquivo index, sendo executado na porta 3003")
 
 })
 app.get("/ping", (req: Request, res: Response) => {
-    res.send("Funciona! ");
+    try {
+        res.status(200).send({ message: "Funciona!" });
+    } catch (error) {
+        console.log(error);
+        if (req.statusCode === 200) {
+            res.status(500);
+        }
+        if (error instanceof Error) {
+            res.send(error.message);
+        } else {
+            res.send("Erro inesperado");
+        }
+    }
 });
+
+// app.use("/posts", postRouter);
+// app.use("/users", userRouter);
