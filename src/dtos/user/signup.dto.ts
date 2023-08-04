@@ -6,8 +6,6 @@ export interface SignupInputDto{
     password: string;
 }
 
-
-
 export const SignupSchema = z.object({
         name: z.string().min(2),
         email: z.string().email(),
