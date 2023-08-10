@@ -1,9 +1,13 @@
 import z from "zod"
 
 export interface SignupInputDto{
-    name: string;
-    email: string;
-    password: string;
+    name: string,
+    email: string,
+    password: string
+}
+
+export interface SignupOutputDTO{    
+    token: string
 }
 
 export const SignupSchema = z.object({
