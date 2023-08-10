@@ -1,13 +1,20 @@
-import express, { Request, Response } from "express";
-import cors from "cors";
+import express from 'express'
+import cors from 'cors'
+import dotenv from 'dotenv'
 
-const app = express();
-app.use(express.json());
+dotenv.config()
 
-app.listen(3003,()=>{
-    console.log("Arquivo index, sendo executado na porta 3003")
+const app = express()
 
+app.use(cors())
+app.use(express.json())
+
+app.listen(Number(process.env.PORT) || 3003, () => {
+    console.log(`Servidor rodando na porta ${Number(process.env.PORT) || 3003}`)
 })
-app.get("/ping", (req: Request, res: Response) => {
-    res.send("Funciona! ");
-});
+
+
+app.get("/ping", (req,res)=>{
+    res.send("Pong! 09/08")
+})
+// routers das entidades
