@@ -1,4 +1,4 @@
-export interface PostsDB {
+export interface PostsDB { //representa o banco de dados
     id: string;
     creator_id: string;
     content: string;
@@ -13,8 +13,8 @@ export interface PostModel {
     content: string;
     likes: number;
     dislikes: number;
-    created_at: string;
-    updated_at: string;
+    createdAt: string;
+    updatedAt: string;
     creator: {
         id: string;
         name: string;
@@ -41,6 +41,9 @@ export class Post {
 
     public getId(): string {
         return this.id;
+    }
+    public setId(value: string): void{
+        this.id =value
     }
 
     public getContent(): string {
@@ -119,8 +122,8 @@ export class Post {
             content: this.content,
             likes: this.likes,
             dislikes: this.dislikes,
-            created_at: this.createdAt,
-            updated_at: this.updatedAt,
+            createdAt: this.createdAt,
+            updatedAt: this.updatedAt,
             creator: {
                 id: this.creatorId,
                 name: this.creatorName,
