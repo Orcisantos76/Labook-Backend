@@ -24,7 +24,7 @@ export interface UserModel{
     createdAt: string
 }
 
-export class User{
+export class User {
     constructor(
         private id: string,
         private name: string,

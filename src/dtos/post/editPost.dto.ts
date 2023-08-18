@@ -13,4 +13,4 @@ export const EditPostSchema = z
         idToEdit: z.string().min(1),
         token: z.string().min(1),
         content: z.string().min(1)
-    }).transform((data) => data as EditPostInputDTO);
+    }).transform(data => data as EditPostInputDTO);

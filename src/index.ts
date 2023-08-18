@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import { HashManager } from './services/HashManager';
 import { userRouter } from './routes/userRouter';
+import { postRouter } from './routes/postRouter';
 
 const app = express();
 app.use(cors());
@@ -18,10 +19,10 @@ app.listen(Number(process.env.PORT) || 3003, () => {
 });
 
 app.use("/users", userRouter);
-app.use("/posts", userRouter);
+app.use("/posts", postRouter);
 
 app.get("/ping", (req,res)=>{
-    res.send("Pong! Só de teste")
+    res.send("Pong! Só de teste 2")
 });
 
 

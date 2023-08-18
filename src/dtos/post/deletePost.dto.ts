@@ -12,4 +12,4 @@ export const DeletePostSchema = z
         idToDelete: z.string().min(1),
         token: z.string().min(1),
     })
-    .transform((data) => data as DeletePostInputDTO);
+    .transform(data => data as DeletePostInputDTO);
