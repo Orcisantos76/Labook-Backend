@@ -1,42 +1,58 @@
-export interface PostsDB { //representa o banco de dados
-    id: string;
-    creator_id: string;
-    content: string;
-    likes: number;
-    dislikes: number;
-    created_at: string;
-    updated_at: string;
+export interface PostDB { //representa o banco de dados
+    id: string,
+    creator_id: string,
+    content: string,
+    likes: number,
+    dislikes: number,
+    created_at: string,
+    updated_at: string,
+}
+
+export interface PostDBWithCreatorName{
+    id: string,
+    creator_id: string,
+    content: string,
+    likes: number,
+    dislikes: number,
+    created_at: string,
+    updated_at: string, 
+    creator_name: string
 }
 
 export interface PostModel {
-    id: string;
-    content: string;
-    likes: number;
-    dislikes: number;
-    createdAt: string;
-    updatedAt: string;
+    id: string,
+    content: string,
+    likes: number,
+    dislikes: number,
+    createdAt: string,
+    updatedAt: string,
     creator: {
-        id: string;
-        name: string;
-    };
+        id: string,
+        name: string,
+    },
 }
 
 export interface LikeDislikeDB {
-    user_id: string;
-    post_id: string;
-    like: number;
+    user_id: string,
+    post_id: string,
+    like: number,
+}
+
+export enum POST_LIKE {
+    LIKED = "already like",
+    DISLIKED = "already dislike",
 }
 
 export class Post {
     constructor(
         private id: string,
-        private creatorId: string,
-        private creatorName: string,
         private content: string,
         private likes: number,
         private dislikes: number,
         private createdAt: string,
-        private updatedAt: string
+        private updatedAt: string,
+        private creatorId: string,
+        private creatorName: string,
     ) { }
 
     public getId(): string {
@@ -49,8 +65,8 @@ export class Post {
     public getContent(): string {
         return this.content;
     }
-    public setContent(value: string) {
-        this.content = value;
+    set setContent(value: string) {
+    this.content = value;
     }
 
     public getLikes(): number {
@@ -104,7 +120,7 @@ export class Post {
         this.creatorName = value;
     }
 
-    public toDBModel(): PostsDB {
+    public toDBModel(): PostDB {
         return {
             id: this.id,
             creator_id: this.creatorId,

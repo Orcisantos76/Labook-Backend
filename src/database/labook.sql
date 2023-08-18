@@ -43,21 +43,21 @@ VALUES
     -- senha orci123 
     (   'u001',
         'Orci',
-        'orci@email',
+        'orci@email.com',
         '$2a$12$fvV/xB9/dMSzCfXDqD5tDuiEBKtkAWnPgYanbyPCRCL3qS7TZU/ae',
         'ADMIN'
     ),
     -- senha ana123 
     (   'u002',
         'Ana',
-        'ana@email',
+        'ana@email.com',
         '$2a$12$H1prbS7h0CihO6axtQQW4uyDrQFhuBYbLG4U8858LUy5kTY0GjGhS',
         'NORMAL'
     ),
     -- senha arthur123 
     (   'u003',
         'Arthur',
-        'arthur@email',
+        'arthur@email.com',
         '$2a$12$PwfNHkKlMha6UcklLZXAYOHCnUr1k3oyGHGVTiNYlgzaioHd/ZkWu',
         'NORMAL'
     );
